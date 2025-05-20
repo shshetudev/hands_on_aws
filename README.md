@@ -59,3 +59,16 @@
 - In the Edit routes section: 
   - 10.0.0.0/16 means: All of ip addresses can talk to each other and subnets can talk to subnets.
   - We add, 0.0.0.0 and add the internet gateway for this.
+
+### What is NACL (Network access control list) ?
+  
+- NACL: Network access control list, is like a virtual firewall which protects subnet and it's stateless.
+- Stateless means: If it allows something any request into the subnet -> It does not remember the sate so it does not allow it back out.
+- So If there is an inbound rule, there should also be outbound rule.
+- Most people leaves it default. And in default it open for all inbound and outbound services.
+- Once use case can be, people use it to block an ip address at subnet level.
+
+#### What is security Group?
+
+- Security Group is a virtual firewall which protects our EC2 instance.
+- Unlike NACL, Security Group is statefull. If there is some inbound rule and data comes in -> It remembers the state -> Allows the same rule out.
