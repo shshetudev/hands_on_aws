@@ -1,3 +1,12 @@
+
+## Flow at a glance
+
+1. Create VPC
+2. Define CIDR Block for VPC
+3. Create Security Groups: Public, Private
+4. Create Internet Gateway for the VPC -> Attach the Gateway to the VPC
+5. Create Route table for each of the subnets: Public, Private -> Associate the route tables to different subnets
+
 ### What is CIDR block?
 
 - 10.0.0.0:
@@ -11,3 +20,22 @@
 
 - It acts as a virtual firewall for EC2 instances to controll incoming and outgoing traffic
 - Security group is related to EC2 instances and here we set rule to allow incoming traffic
+
+### What is Gateway?
+
+- In general, Gateway connects our VPC to another network.
+- There are multiple types of Gateways:
+  - Internet Gateway:
+    - It is the features of VPC
+    - It allows our subnets to the internet
+    - We can have only one gateway per VPC
+    - After creating a Gateway we need to attach it to the VPC
+  - Transit Gateway
+  - NAT Gateway
+
+
+### What is Route table?
+
+- We need to allow our route table on our public subnet, to route out to the internet
+- We need to create two route tables: public and private to associate and route out the subnets
+- After creating the route tables we need to attach them to different vpcs
